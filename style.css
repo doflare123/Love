@@ -1,0 +1,57 @@
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Чтобы не было прокрутки */
+    margin: 0;
+}
+
+canvas {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+}
+
+#heart {
+    z-index: 100; /* Центральное сердце сверху */
+    pointer-events: none;
+}
+
+.background {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 98; /* Фоновые сердечки снизу */
+    pointer-events: none;
+}
+
+
+
+#typing-text {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: white;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    overflow: hidden; /* Обрезаем содержимое */
+    white-space: nowrap;
+    z-index: 101;
+}
+
+#typing-text p {
+    display: inline-block;
+    border-right: 1px solid white;
+    padding-right: 2px; 
+    animation: blink 0.8s step-end infinite;
+    z-index: 101;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
