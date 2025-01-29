@@ -14,26 +14,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 paragraph.textContent += currentText.charAt(index);
                 textContainer.style.width = `${paragraph.offsetWidth + 20}px`;
                 index++;
-                setTimeout(typeEffect, 100); // Скорость печатания
+                setTimeout(typeEffect, 100);
             } else {
                 setTimeout(() => {
                     deleting = true;
                     typeEffect();
-                }, 2000); // Ждём 10 секунд перед удалением текста
+                }, 2000);
             }
         } else {
             if (index > 0) {
                 paragraph.textContent = currentText.substring(0, index - 1);
                 textContainer.style.width = `${paragraph.offsetWidth - 20}px`;
                 index--;
-                setTimeout(typeEffect, 50); // Скорость удаления
+                setTimeout(typeEffect, 50);
             } else {
                 deleting = false;
-                textIndex = (textIndex + 1) % texts.length; // Переход к следующему тексту
-                setTimeout(typeEffect, 1000); // Пауза перед началом нового текста
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(typeEffect, 1000);
             }
         }
         
     }
-    setTimeout(typeEffect, 2000); // Задержка перед началом анимации
+    setTimeout(typeEffect, 2000);
 });
